@@ -22,7 +22,7 @@ PRICE = {
     '6': [LabeledPrice(label='Item6', amount=600000)]
 }
 
-normal_shipping_options = ShippingOption(id='normal', title='Быстрая доставка').add(LabeledPrice('Быстрая доставка ', 20000))
+normal_shipping_options = ShippingOption(id='normal', title='Доставка за границу').add(LabeledPrice('Доставка за границу', 20000))
 
 @dp.message_handler(content_types='web_app_data')
 async def buy_process(web_app_message):
@@ -55,7 +55,7 @@ async def shipping_process(shipping_query: ShippingQuery):
             error_message="По данному адресу нет доставки!"
         )
     shipping_options = [ShippingOption(id='regular',
-                                    title='Бесплатная доставка').add(LabeledPrice('Бесплатная доставка', 00000))]
+                                    title='Доставка по России').add(LabeledPrice('Доставка по России', 00000))]
 
     if shipping_query.shipping_address.country_code =="KZ"\
             or shipping_query.shipping_address.country_code =="BY":
