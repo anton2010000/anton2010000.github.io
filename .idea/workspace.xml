@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74353610-b23b-4a53-9f06-2ffaa518cc52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
-    </list>
+    <list default="true" id="74353610-b23b-4a53-9f06-2ffaa518cc52" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,13 +93,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676937028841</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit text message">
+      <created>1676938169742</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676938169742</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add file" />
     <MESSAGE value="add let item1 = &quot;&quot;;" />
     <MESSAGE value="add lib and handlers" />
-    <option name="LAST_COMMIT_MESSAGE" value="add lib and handlers" />
+    <MESSAGE value="Edit text message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit text message" />
   </component>
 </project>
