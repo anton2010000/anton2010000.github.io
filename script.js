@@ -85,9 +85,8 @@ btn6.addEventListener("click", function(){
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
-Telegram.WebApp.onEvent('backButtonClicked', callback)
 });
-
+Telegram.WebApp.onEvent('backButtonClicked', callback)
 let usercard = document.getElementById("usercard");
 
 let p = document.createElement("p");
