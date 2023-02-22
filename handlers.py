@@ -43,6 +43,8 @@ async def buy_process(web_app_message):
                            prices=PRICE[f'{web_app_message.web_app_data.data}'],
                            start_parameter='example',
                            payload='some_invoice')
+    await bot.send_message(web_app_message.chat.id, f"получили инофрмацию из веб-приложения: {web_app_message.web_app_data.data}")
+
 
 @dp.shipping_query_handler(lambda q: True)
 async def shipping_process(shipping_query: ShippingQuery):
@@ -76,5 +78,6 @@ async def checkout_process(pre_checkout_query: PreCheckoutQuery):
 @dp.message_handler(content_types=ContentType.SUCCESSFUL_PAYMENT)
 async def successful_payment(message: Message):
     await bot.send_message(message.chat.id,
-
-                           'Платеж совершен успешно!')
+                           'Платеж сумму `{} {}` совершен успешно!'.format(
+                               message.successful_payment.total_amount / 100, message.successful_payment.currency),
+                           parse_mode='Markdown')
