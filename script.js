@@ -24,7 +24,6 @@ btn1.addEventListener("click", function(){
 		tg.MainButton.setText("Вы выбрали товар 1!");
 		item = "1";
 		tg.MainButton.show();
-		tg.BackButton.show();
 	}
 });
 
@@ -86,7 +85,7 @@ btn6.addEventListener("click", function(){
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
-	Telegram.WebApp.onEvent('backButtonClicked', callback)
+Telegram.WebApp.onEvent('backButtonClicked', callback)
 });
 
 let usercard = document.getElementById("usercard");
