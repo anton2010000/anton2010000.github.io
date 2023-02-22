@@ -4,8 +4,6 @@ tg.expand();
 
 tg.MainButton.textColor = "#FFFFFF";
 tg.MainButton.color = "#2cab37";
-tg.BackButton.textColor = "#FFFFFF";
-tg.BackButton.color = "#2cab37";
 
 let item = "";
 let item1 = "";
@@ -86,7 +84,11 @@ btn6.addEventListener("click", function(){
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
 });
-Telegram.WebApp.onEvent('backButtonClicked', callback)
+BackButton.onClick(function() {
+  WebApp.showAlert("Нет пути назад!");
+  
+  BackButton.hide();
+});
 let usercard = document.getElementById("usercard");
 
 let p = document.createElement("p");
