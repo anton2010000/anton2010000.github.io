@@ -84,9 +84,9 @@ btn6.addEventListener("click", function(){
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
 });
-BackButton.onClick(function() {
+WebApp.BackButton.onClick(function() {
   WebApp.showAlert("Нет пути назад!");
-  
+
   BackButton.hide();
 });
 let usercard = document.getElementById("usercard");
