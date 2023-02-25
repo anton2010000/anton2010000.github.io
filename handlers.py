@@ -79,5 +79,5 @@ async def checkout_process(pre_checkout_query: PreCheckoutQuery):
 async def successful_payment(message: Message):
     await bot.send_message(message.chat.id,
                            'Платеж сумму `{} {}` совершен успешно!'.format(
-                               message.successful_payment.total_amount / 100, message.successful_payment.currency),
+                               message.successful_payment.total_amount / 100, message.successful_payment),
                            parse_mode='Markdown')
