@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74353610-b23b-4a53-9f06-2ffaa518cc52" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.example " afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677370256655</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="DATACLASSES">
+      <created>1678746039640</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1678746039640</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,6 +219,7 @@
     <MESSAGE value="Edit text message" />
     <MESSAGE value="add new token" />
     <MESSAGE value="test back button" />
-    <option name="LAST_COMMIT_MESSAGE" value="test back button" />
+    <MESSAGE value="DATACLASSES" />
+    <option name="LAST_COMMIT_MESSAGE" value="DATACLASSES" />
   </component>
 </project>
