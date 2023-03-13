@@ -1,7 +1,8 @@
 import asyncio
 from aiogram import Bot, Dispatcher, executor
-
-from config import BOT_TOKEN
+from config import load_config
+config = load_config('/Users/anton/PycharmProjects/pythonProject/.env')
+BOT_TOKEN = config.tg_bot.token
 
 loop = asyncio.new_event_loop()
 bot = Bot(BOT_TOKEN, parse_mode='HTML')

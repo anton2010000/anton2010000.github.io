@@ -3,10 +3,12 @@ from aiogram.types import PreCheckoutQuery, LabeledPrice
 from aiogram.dispatcher.filters import Command
 
 from main import bot, dp
-from config import PAYMENTS_TOKEN
 
 from keyboards import keyboard
 
+from config import load_config
+config = load_config('/Users/anton/PycharmProjects/pythonProject/.env')
+PAYMENTS_TOKEN = config.tg_bot.payments_token
 @dp.message_handler(Command('start'))
 async def start(message: Message):
     await bot.send_message(message.chat.id,
