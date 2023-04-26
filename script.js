@@ -22,7 +22,7 @@ catalog.addEventListener("click", () => {
     })
 
 btn1.addEventListener("click", function(){
-    document.getElementById("form").style.display = "block";
+    document.getElementById("main").style.display = "none";
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
