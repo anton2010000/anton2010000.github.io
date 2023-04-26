@@ -19,7 +19,7 @@ let catalog = document.getElementById("catalog");
 catalog.addEventListener("click", () => {
     document.getElementById("main").style.display = "none";
     document.getElementById("form").style.display = "block";
-    })
+
 
 btn1.addEventListener("click", function(){
 	if (tg.MainButton.isVisible) {
@@ -95,6 +95,7 @@ WebApp.BackButton.onClick(function() {
     WebApp.showAlert("Нет пути назад!");
     tg.MainButton.hide();
 });
+})
 let usercard = document.getElementById("usercard");
 
 let p = document.createElement("p");
