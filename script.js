@@ -22,11 +22,11 @@ catalog.addEventListener("click", () => {
     })
 
 btn1.addEventListener("click", function(){
-    document.getElementById("main").style.display = "none";
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
 	else {
+	    document.getElementById("main").style.display = "none";
 		tg.MainButton.setText("Вы выбрали товар 1!");
 		item = "1";
 		tg.MainButton.show();
