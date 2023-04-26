@@ -19,9 +19,10 @@ let catalog = document.getElementById("catalog");
 catalog.addEventListener("click", () => {
     document.getElementById("main").style.display = "none";
     document.getElementById("form").style.display = "block";
-
+    })
 
 btn1.addEventListener("click", function(){
+    document.getElementById("form").style.display = "block";
 	if (tg.MainButton.isVisible) {
 		tg.MainButton.hide();
 	}
@@ -87,7 +88,7 @@ btn6.addEventListener("click", function(){
 	}
 });
 
-})
+
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
 	tg.sendData(item);
 });
