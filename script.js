@@ -27,6 +27,7 @@ btn1.addEventListener("click", function(){
 	}
 	else {
 	    document.getElementById("main").style.display = "none";
+	    document.getElementById("form").style.display = "block";
 		tg.MainButton.setText("Вы выбрали товар 1!");
 		item = "1";
 		tg.MainButton.show();
