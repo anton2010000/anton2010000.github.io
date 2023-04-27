@@ -12,7 +12,7 @@ PAYMENTS_TOKEN = config.tg_bot.payments_token
 @dp.message_handler(Command('start'))
 async def start(message: Message):
     await bot.send_message(message.chat.id,
-                           'Тестируем WebAppss',
+                           'Онлайн магазин в телеграм',
                            reply_markup=keyboard)
 
 PRICE = {
