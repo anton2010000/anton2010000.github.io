@@ -2,12 +2,14 @@ from aiogram.types import Message, ContentType, ShippingQuery, ShippingOption
 from aiogram.types import PreCheckoutQuery, LabeledPrice
 from aiogram.dispatcher.filters import Command
 
+import json
+
 from main import bot, dp
 
 from keyboards import keyboard
 
 from config import load_config
-config = load_config('/Users/anton/PycharmProjects/pythonProject/.env')
+config = load_config('/workspaces/anton2010000.github.io/.env')
 PAYMENTS_TOKEN = config.tg_bot.payments_token
 @dp.message_handler(Command('start'))
 async def start(message: Message):
@@ -15,22 +17,20 @@ async def start(message: Message):
                            'Онлайн магазин в телеграм',
                            reply_markup=keyboard)
 
-PRICE = {
-    '1': [LabeledPrice(label='Item1', amount=10000)],
-    '2': [LabeledPrice(label='Item2', amount=200000)],
-    '3': [LabeledPrice(label='Item3', amount=30000)],
-    '4': [LabeledPrice(label='Item4', amount=400000)],
-    '5': [LabeledPrice(label='Item5', amount=500000)],
-    '6': [LabeledPrice(label='Item6', amount=600000)]
-}
-
 normal_shipping_options = ShippingOption(id='normal', title='Доставка за границу').add(LabeledPrice('Доставка за границу', 20000))
+
 
 @dp.message_handler(content_types='web_app_data')
 async def buy_process(web_app_message):
+    orderItems = json.loads(web_app_message.web_app_data.data)
+    description = ''
+    sum = 0
+    for item in orderItems:
+        description += item.get('label') + " " + str(item.get('amount')/100) + "руб | "
+        sum += item.get('amount')/100
     await bot.send_invoice(web_app_message.chat.id,
-                           title='Product name,',
-                           description='Product description',
+                           title='Заказ',
+                           description='В заказе позиций: ' + str(len(orderItems)) + '. На сумму ' + str(sum) + ' руб',
                            provider_token=PAYMENTS_TOKEN,
                            photo_url='https://kawai.shikimori.one/assets/globals/missing_original.jpg',
                            photo_height=212,  # !=0/None or picture won't be shown
@@ -42,7 +42,7 @@ async def buy_process(web_app_message):
                            currency='rub',
                            need_email=True,
                            need_phone_number=True,
-                           prices=PRICE[f'{web_app_message.web_app_data.data}'],
+                           prices=json.loads(web_app_message.web_app_data.data),
                            start_parameter='example',
                            payload='some_invoice')
     await bot.send_message(web_app_message.chat.id, f"получили инофрмацию из веб-приложения: {web_app_message.web_app_data.data}")

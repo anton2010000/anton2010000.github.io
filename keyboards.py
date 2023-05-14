@@ -1,7 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, WebAppInfo, InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.callback_data import CallbackData
 
-web_app = WebAppInfo(url="https://anton2010000.github.io/")
+web_app = WebAppInfo(url="https://tg-webapp-for-anton.vercel.app/")
 
 keyboard = ReplyKeyboardMarkup(
     keyboard=[
