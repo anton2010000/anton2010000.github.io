@@ -5,6 +5,7 @@ class TgBot:
     token: str            # Токен для доступа к телеграм-боту
     admin_ids: list[int]  # Список id администраторов бота
     payments_token: str   # Токен для оплаты
+    webapp_url: str       # Адрес webapp
 
 @dataclass
 class DatabaseConfig:
@@ -25,6 +26,7 @@ env: Env = Env()
 env.read_env()
 # Создаем экземпляр класса Config и наполняем его данными из переменных окружения
 config = Config(tg_bot=TgBot(token=env('BOT_TOKEN'),
+                            webapp_url=env('WEBAPP_URL'),
                             payments_token=env('PAYMENTS_TOKEN'),
                              admin_ids=list(map(int, env.list('ADMIN_IDS')))),
                 db=DatabaseConfig(database=env('DATABASE'),
@@ -38,6 +40,7 @@ def load_config(path: str | None) -> Config:
     env.read_env(path)
 
     return Config(tg_bot=TgBot(token=env('BOT_TOKEN'),
+                            webapp_url=env('WEBAPP_URL'),
                                payments_token=env('PAYMENTS_TOKEN'),
                                admin_ids=list(map(int, env.list('ADMIN_IDS')))),
                   db=DatabaseConfig(database=env('DATABASE'),
