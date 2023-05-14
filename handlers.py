@@ -9,7 +9,7 @@ from main import bot, dp
 from keyboards import keyboard
 
 from config import load_config
-config = load_config('/workspaces/anton2010000.github.io/.env')
+config = load_config('.env')
 PAYMENTS_TOKEN = config.tg_bot.payments_token
 @dp.message_handler(Command('start'))
 async def start(message: Message):
